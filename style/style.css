@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+:root {
+    --primaryTextColor: #0B2447;
+    --secondaryTextColor: #103466;
+
+    --borderColor: #f1f1f1;
+    --lineColor: #3B3486;
+
+    --primaryBackgroundColor: #fff;
+    --secondaryBackgroundColor: #fbfbfb;
+    --thirdBackgroundColor: #f5f3fe;
+
+    --primaryIconColor: #3B77D6;
+    --primaryIconColorHover: #103466;
+
+    --sectionPadding: 6rem 0;
+
+    --itemBorderRadius: 0.7rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e3dbf6, #a99bf9);
+    padding: 10px;
+}
+
+.card {
+    width: 350px;
+    height: 515px;
+    margin: 100px auto 0;
+    perspective: 1000px;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.front, .back {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.front {
+    /* background: var(--primaryBackgroundColor); */
+    background: url(../images/person.png);
+    background-size: cover;
+    background-position: center;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: var(--primaryBackgroundColor)
+}
+
+.front h2 {
+    font-weight: 600;
+}
+
+.front p {
+    color: var(--primaryBackgroundColor);
+    font-size: 13px;
+}
+
+.front button {
+    font-weight: 500;
+    width: 120px;
+    border: 2px solid var(--primaryBackgroundColor);
+    background: transparent;
+    border-radius: 50px;
+    padding: 8px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    color: var(--thirdBackgroundColor);
+}
+
+.back {
+    background: var(--primaryBackgroundColor);
+    color: var(--primaryTextColor);
+    padding: 20px 40px;
+    transform: rotateY(180deg);
+}
+
+.back h1 {
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 55px;
+    margin-bottom: 10px;
+}
+
+.back p {
+    font-size: 14px;
+}
+
+.back p span {
+    font-weight: 600;
+}
+
+.back img {
+    width: 120px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.col {
+    flex: 1;
+    text-align: center;
+    color: var(--lineColor);
+    font-size: 12px;
+    position: relative;
+}
+
+.col h2 {
+    font-size: 20px;
+}
+
+.col img {
+    width: 25%;
+    margin-top: 10px;
+}
+
+.col::after {
+    content: '';
+    width: 1.5px;
+    height: 20px;
+    background: var(--secondaryTextColor);
+    position: absolute;
+    top: 5px;
+    right: 0;
+}
+
+.col:last-child::after {
+    display: none;
+}
+
+.back button {
+    background: var(--secondaryBackgroundColor);
+    border: 0;
+    outline: 0;
+    padding: 8px 25px;
+    border-radius: 30px;
+    font-size: 14px;
+    margin-right: 15px;
+    box-shadow: 0 8px 10px rgba(120, 0, 173, 0.3);
+}
+
+.back a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+}
+
+.back a img {
+    width: 50%;
+}
+
+.card:hover .card-inner{
+    transform: rotateY(180deg);
+}
